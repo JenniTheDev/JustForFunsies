@@ -4,8 +4,8 @@
 using UnityEngine;
 
 namespace Variables {
-    [CreateAssetMenu(fileName = "New Game Variable (Int)", menuName = "Game Variable/New Game Variable (Int)")]
-    public class IntVariable : ScriptableObject {
+    [CreateAssetMenu(fileName = "New Scriptable Object (Int)", menuName = "Scriptable Object (Int)")]
+    public class IntSO : ScriptableObject {
         [SerializeField] private int intValue;
 
         public int IntValue {
@@ -13,11 +13,11 @@ namespace Variables {
             set { this.intValue = value; }
         }
 
-        public IntVariable(int intValue) {
+        public IntSO(int intValue) {
             this.intValue = intValue;
         }
 
-        public static implicit operator int(IntVariable v) {
+        public static implicit operator int(IntSO v) {
             return v.IntValue;
         }
     }
