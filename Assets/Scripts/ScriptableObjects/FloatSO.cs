@@ -3,7 +3,7 @@
 // game architecture with scriptable objects
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Scriptable Object (Float)", menuName = "Scriptable Object (float)")]
+[CreateAssetMenu(menuName = "Scriptable Objects/Scriptable Object(Float)")]
 public class FloatSO : ScriptableObject {
     [SerializeField] private float floatValue;
 

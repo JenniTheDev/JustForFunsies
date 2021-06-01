@@ -4,7 +4,7 @@
 using UnityEngine;
 
 namespace Variables {
-    [CreateAssetMenu(fileName = "New Scriptable Object (Int)", menuName = "Scriptable Object (Int)")]
+    [CreateAssetMenu(menuName = "Scriptable Objects/Scriptable Object(Int)")]
     public class IntSO : ScriptableObject {
         [SerializeField] private int intValue;
 

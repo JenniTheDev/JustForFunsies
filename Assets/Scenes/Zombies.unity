@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 236077204}
   - component: {fileID: 236077203}
   - component: {fileID: 236077202}
+  - component: {fileID: 236077207}
   m_Layer: 0
   m_Name: BadStuff
   m_TagString: Untagged
@@ -567,6 +568,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &236077207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236077201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14af7424a9b06834284c84422257b8e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHealthChange: {fileID: 11400000, guid: 743970bda9a44a74ba5e65042ceb8cb2, type: 2}
+  healthChangeAmt: -10
+  soundEffect: {fileID: 8300000, guid: b35a55dead7616f48b20424853121de4, type: 3}
 --- !u!1 &437485783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1194,7 @@ GameObject:
   - component: {fileID: 1805973716}
   - component: {fileID: 1805973715}
   - component: {fileID: 1805973714}
+  - component: {fileID: 1805973719}
   m_Layer: 0
   m_Name: GoodStuff
   m_TagString: Untagged
@@ -1275,6 +1292,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1805973719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805973713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14af7424a9b06834284c84422257b8e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHealthChange: {fileID: 11400000, guid: 743970bda9a44a74ba5e65042ceb8cb2, type: 2}
+  healthChangeAmt: 10
+  soundEffect: {fileID: 0}
 --- !u!1 &1999556480
 GameObject:
   m_ObjectHideFlags: 0
