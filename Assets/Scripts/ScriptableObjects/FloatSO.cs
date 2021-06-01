@@ -5,21 +5,18 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Scriptable Object (Float)", menuName = "Scriptable Object (float)")]
 public class FloatSO : ScriptableObject {
-    public float Value;
+    [SerializeField] private float floatValue;
 
-    public void SetValue(float value) {
-        Value = value;
+    public float FloatValue {
+        get { return this.floatValue; }
+        set { this.floatValue = value; }
     }
 
-    public void SetValue(FloatSO value) {
-        Value = value.Value;
+    public FloatSO(float floatValue) {
+        this.floatValue = floatValue;
     }
 
-    public void ApplyChange(float amount) {
-        Value += amount;
-    }
-
-    public void ApplyChange(FloatSO amount) {
-        Value += amount.Value;
+    public static implicit operator float(FloatSO fV) {
+        return fV.FloatValue;
     }
 }
