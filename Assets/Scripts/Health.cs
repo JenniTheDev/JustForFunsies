@@ -6,8 +6,9 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour {
     [SerializeField] private float healthPoints;
     [SerializeField] private FloatSO startingHP;
-    [SerializeField] private UnityEvent damageEvent;
-    [SerializeField] private UnityEvent deathEvent;
+    [SerializeField] private AudioSource healthSounds;
+    //[SerializeField] private UnityEvent damageEvent;
+    //[SerializeField] private UnityEvent deathEvent;
 
     public float HealthValue {
         get { return this.healthPoints; }
@@ -18,6 +19,13 @@ public class Health : MonoBehaviour {
         healthPoints = startingHP;
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider collider) {
+        AdjustHealth(collider.GetComponent<HealthChange>());
+    }
+
+    private void AdjustHealth(HealthChange healthChange) {
+        healthPoints += healthChange.HealthChangeAmount;
+        healthSounds.clip = healthChange.SoundEffect;
+        healthSounds.Play();
     }
 }
