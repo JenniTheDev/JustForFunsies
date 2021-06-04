@@ -9,8 +9,11 @@ public class UIText : MonoBehaviour {
     [SerializeField] private TMP_Text toText;
     [SerializeField] private string textTitle;
 
+    private void Start() {
+    }
+
     // Should be on event health change
-    private void FixedUpdate() {
+    public void UpdateHealthUI() {
         floatNumber = player.GetComponent<Health>().HealthValue;
         toText.text = $"{textTitle} {floatNumber}";
     }

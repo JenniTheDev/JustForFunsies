@@ -1446,6 +1446,7 @@ GameObject:
   - component: {fileID: 1999556483}
   - component: {fileID: 1999556482}
   - component: {fileID: 1999556484}
+  - component: {fileID: 1999556485}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1585,6 +1586,34 @@ MonoBehaviour:
   player: {fileID: 5381868640928137834}
   toText: {fileID: 1999556482}
   textTitle: 'HP:'
+--- !u!114 &1999556485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999556480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df6a54577af12d4e9bf2dbb472642f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 743970bda9a44a74ba5e65042ceb8cb2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1999556484}
+        m_TargetAssemblyTypeName: UIText, Assembly-CSharp
+        m_MethodName: UpdateHealthUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &5381868640928137833
 PrefabInstance:
   m_ObjectHideFlags: 0
