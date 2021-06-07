@@ -1873,6 +1873,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 174228733}
+    - target: {fileID: 5381868641573414127, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: bbd1e3e3670247541b67b10a23e823ef, type: 3}
+    - target: {fileID: 5381868641573414127, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5381868641573414124, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
@@ -1938,6 +1946,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  jumpHeight: 1
+  jumpSpeed: -3
 --- !u!4 &5381868640928137843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5381868641573414114, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}

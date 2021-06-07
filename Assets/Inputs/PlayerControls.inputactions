@@ -23,9 +23,9 @@
                 },
                 {
                     "name": "Look",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "e0236011-cf4d-463d-be1d-aa8f123e2b5d",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 },
@@ -135,7 +135,18 @@
                 {
                     "name": "",
                     "id": "c5fad88f-50db-4470-84e6-52ad4b1dd172",
-                    "path": "",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab4deac3-03f2-49ff-83b7-83f3f7b97d59",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
