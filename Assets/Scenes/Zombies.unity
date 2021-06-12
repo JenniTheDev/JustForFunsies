@@ -2013,6 +2013,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -944628639613478452, guid: bbd1e3e3670247541b67b10a23e823ef, type: 3}
     - target: {fileID: 5381868641573414127, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 114680845}
+    - target: {fileID: 5381868641573414127, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
       propertyPath: m_DefaultControlScheme
       value: Keyboard
       objectReference: {fileID: 0}
