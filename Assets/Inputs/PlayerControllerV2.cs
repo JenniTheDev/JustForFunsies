@@ -27,9 +27,9 @@ public class PlayerControllerV2 : MonoBehaviour {
 
     private void Update() {
         // Should move to own method?
-        if (Input.GetButtonDown("Jump") && isPlayerGrounded) {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * jumpSpeed);
-        }
+        //if (Input.GetButtonDown("Jump") && isPlayerGrounded) {
+        //    playerVelocity.y += Mathf.Sqrt(jumpHeight * jumpSpeed);
+        //}
         // how do you get gravity from the in game main setting of gravity?
         //playerVelocity.y += Physics.gravity * Time.deltaTime;
     }

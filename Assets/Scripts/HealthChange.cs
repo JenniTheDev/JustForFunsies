@@ -3,13 +3,11 @@ using SOEvents.Events;
 
 public class HealthChange : MonoBehaviour {
     [SerializeField] private GameEventHealthChange onHealthChange;
-    [SerializeField] private float healthChangeAmt;
-    [SerializeField] private AudioClip soundEffect;
+    [SerializeField] private HealthChangeData healthChangeAmt;
 
-    public float HealthChangeAmount { get => healthChangeAmt; }
-    public AudioClip SoundEffect { get => soundEffect; }
+    public HealthChangeData HealthChangeAmount { get => healthChangeAmt; }
 
     public void ActivateChange() {
-        onHealthChange.Raise(this);
+        onHealthChange.Raise(new HealthChangeData(healthChangeAmt));
     }
 }
