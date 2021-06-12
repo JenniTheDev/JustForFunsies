@@ -3,24 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour {
+[System.Serializable]
+public class Health {
     [SerializeField] private float healthPoints;
-    [SerializeField] private FloatSO startingHP;
+    [SerializeField] private float startingHP;
+
+    public Health(float startingHP) {
+        this.startingHP = startingHP;
+        this.healthPoints = startingHP;
+    }
 
     public float HealthValue {
         get { return this.healthPoints; }
-        set { this.healthPoints = value; }
     }
 
-    private void Start() {
-        healthPoints = startingHP;
-    }
-
-    private void OnTriggerEnter(Collider collider) {
-        AdjustHealth(collider.GetComponent<HealthChangeData>());
-    }
-
-    private void AdjustHealth(HealthChangeData healthChange) {
-        healthPoints += healthChange.ChangeAmount;
+    public void AdjustHealth(float healthChange) {
+        healthPoints += healthChange;
     }
 }

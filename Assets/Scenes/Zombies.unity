@@ -649,7 +649,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236077201}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 2, z: 10}
@@ -740,12 +740,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 236077201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14af7424a9b06834284c84422257b8e1, type: 3}
+  m_Script: {fileID: 11500000, guid: e3d43df6449b0a04685ff65ced4fb74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onHealthChange: {fileID: 11400000, guid: 743970bda9a44a74ba5e65042ceb8cb2, type: 2}
-  healthChangeAmt: -10
-  soundEffect: {fileID: 8300000, guid: b35a55dead7616f48b20424853121de4, type: 3}
+  damageAmount: {fileID: 11400000, guid: a3bed467e0a98e44abbee056e3c83527, type: 2}
 --- !u!1 &437485783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,7 +1744,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHealthChange: {fileID: 11400000, guid: 743970bda9a44a74ba5e65042ceb8cb2, type: 2}
   healthChangeAmt: 10
-  soundEffect: {fileID: 8300000, guid: bb74563df82bd6c42afcaf93ca382947, type: 3}
 --- !u!1 &1999556480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,7 +1908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df6a54577af12d4e9bf2dbb472642f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 743970bda9a44a74ba5e65042ceb8cb2, type: 2}
+  gameEvent: {fileID: 0}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -2036,41 +2033,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5381868640928137834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afa96568840d7864ca9f39cb4010b21a, type: 3}
+  m_Script: {fileID: 11500000, guid: d6ece068a8425c74890b87c1ecd85c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 0
-  startingHP: {fileID: 11400000, guid: 581a960ef33513749934dd3ed5e1431a, type: 2}
-  healthSounds: {fileID: 161597658}
---- !u!114 &5381868640928137836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5381868640928137834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df6a54577af12d4e9bf2dbb472642f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 743970bda9a44a74ba5e65042ceb8cb2, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 743970bda9a44a74ba5e65042ceb8cb2, type: 2}
-        m_TargetAssemblyTypeName: SOEvents.Events.BaseGameEvent`1[[HealthChange,
-          Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  playerHealth:
+    healthPoints: 0
+    startingHP: 0
+  onHealthChange: {fileID: 11400000, guid: 743970bda9a44a74ba5e65042ceb8cb2, type: 2}
 --- !u!114 &5381868640928137837
 MonoBehaviour:
   m_ObjectHideFlags: 0
