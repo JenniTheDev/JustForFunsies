@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
+    private InputManager inputManager;
 
     private void Start() {
         controller = GetComponent<CharacterController>();
