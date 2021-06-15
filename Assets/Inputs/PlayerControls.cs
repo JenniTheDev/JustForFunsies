@@ -6,11 +6,10 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class @PlayerControls : IInputActionCollection, IDisposable
-{
+public class @PlayerControls : IInputActionCollection, IDisposable {
     public InputActionAsset asset { get; }
-    public @PlayerControls()
-    {
+
+    public @PlayerControls() {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""PlayerControls"",
     ""maps"": [
@@ -271,52 +270,45 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_MoveObject = m_Player.FindAction("MoveObject", throwIfNotFound: true);
     }
 
-    public void Dispose()
-    {
+    public void Dispose() {
         UnityEngine.Object.Destroy(asset);
     }
 
-    public InputBinding? bindingMask
-    {
+    public InputBinding? bindingMask {
         get => asset.bindingMask;
         set => asset.bindingMask = value;
     }
 
-    public ReadOnlyArray<InputDevice>? devices
-    {
+    public ReadOnlyArray<InputDevice>? devices {
         get => asset.devices;
         set => asset.devices = value;
     }
 
     public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
 
-    public bool Contains(InputAction action)
-    {
+    public bool Contains(InputAction action) {
         return asset.Contains(action);
     }
 
-    public IEnumerator<InputAction> GetEnumerator()
-    {
+    public IEnumerator<InputAction> GetEnumerator() {
         return asset.GetEnumerator();
     }
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
+    IEnumerator IEnumerable.GetEnumerator() {
         return GetEnumerator();
     }
 
-    public void Enable()
-    {
+    public void Enable() {
         asset.Enable();
     }
 
-    public void Disable()
-    {
+    public void Disable() {
         asset.Disable();
     }
 
     // Player
     private readonly InputActionMap m_Player;
+
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Buttons;
     private readonly InputAction m_Player_Move;
@@ -324,25 +316,41 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_MoveObject;
-    public struct PlayerActions
-    {
+
+    public struct PlayerActions {
         private @PlayerControls m_Wrapper;
-        public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+
+        public PlayerActions(@PlayerControls wrapper) {
+            m_Wrapper = wrapper;
+        }
+
         public InputAction @Buttons => m_Wrapper.m_Player_Buttons;
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @MoveObject => m_Wrapper.m_Player_MoveObject;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
+
+        public InputActionMap Get() {
+            return m_Wrapper.m_Player;
+        }
+
+        public void Enable() {
+            Get().Enable();
+        }
+
+        public void Disable() {
+            Get().Disable();
+        }
+
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActions instance)
-        {
-            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
-            {
+
+        public static implicit operator InputActionMap(PlayerActions set) {
+            return set.Get();
+        }
+
+        public void SetCallbacks(IPlayerActions instance) {
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null) {
                 @Buttons.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtons;
                 @Buttons.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtons;
                 @Buttons.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtons;
@@ -363,8 +371,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MoveObject.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveObject;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
-            if (instance != null)
-            {
+            if (instance != null) {
                 @Buttons.started += instance.OnButtons;
                 @Buttons.performed += instance.OnButtons;
                 @Buttons.canceled += instance.OnButtons;
@@ -386,32 +393,38 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             }
         }
     }
+
     public PlayerActions @Player => new PlayerActions(this);
     private int m_KeyboardSchemeIndex = -1;
-    public InputControlScheme KeyboardScheme
-    {
-        get
-        {
+
+    public InputControlScheme KeyboardScheme {
+        get {
             if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
             return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
+
     private int m_GamepadSchemeIndex = -1;
-    public InputControlScheme GamepadScheme
-    {
-        get
-        {
+
+    public InputControlScheme GamepadScheme {
+        get {
             if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
             return asset.controlSchemes[m_GamepadSchemeIndex];
         }
     }
-    public interface IPlayerActions
-    {
+
+    public interface IPlayerActions {
+
         void OnButtons(InputAction.CallbackContext context);
+
         void OnMove(InputAction.CallbackContext context);
+
         void OnLook(InputAction.CallbackContext context);
+
         void OnJump(InputAction.CallbackContext context);
+
         void OnShoot(InputAction.CallbackContext context);
+
         void OnMoveObject(InputAction.CallbackContext context);
     }
 }
