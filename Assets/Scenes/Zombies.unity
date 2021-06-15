@@ -1958,19 +1958,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5381868641573414114, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.28740966
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5381868641573414114, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5381868641573414114, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.95780784
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5381868641573414114, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5381868641573414114, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1978,7 +1978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5381868641573414114, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -146.594
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5381868641573414114, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2023,6 +2023,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 5381868641573414127, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
+    - {fileID: 5381868641573414124, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4028c091c204f5343ba193e9b0f3ef12, type: 3}
 --- !u!1 &5381868640928137834 stripped
 GameObject:
@@ -2096,7 +2097,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.50000024
+  m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
