@@ -1070,8 +1070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerIndex: -1
-  XYAxis: {fileID: -6377514929501427781, guid: 1a6320be5a4cced4a973f82351f410de, type: 3}
-  ZAxis: {fileID: 0}
+  XYAxis: {fileID: -2327264951922021019, guid: bbd1e3e3670247541b67b10a23e823ef, type: 3}
+  ZAxis: {fileID: -2327264951922021019, guid: bbd1e3e3670247541b67b10a23e823ef, type: 3}
 --- !u!1 &690451238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 5381868640928137839}
   speed: 11
+  gravity: -25
 --- !u!114 &5381868640928137837
 MonoBehaviour:
   m_ObjectHideFlags: 0
