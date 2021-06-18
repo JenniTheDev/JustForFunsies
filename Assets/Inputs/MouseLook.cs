@@ -10,18 +10,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseLook : MonoBehaviour {
-    public float mouseSensitivity = 100f;
+    [SerializeField] private float mouseSensitivity = 100f;
 
-    public Transform playerBody;
+    [SerializeField] private Transform playerBody;
 
     private float xRotation = 0f;
+    // When I move these outside of Update, it breaks
+    // private float mouseX = 0f;
+    // private float mouseY = 0f;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    //TODO: Ask Vast how to not do this in the Update loop
     private void Update() {
 #if ENABLE_INPUT_SYSTEM
+        // When I move these outside of Update, it breaks
+        // TODO: find out why this breaks everything
         float mouseX = 0, mouseY = 0;
 
         if (Mouse.current != null) {

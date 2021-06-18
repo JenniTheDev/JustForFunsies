@@ -47,6 +47,7 @@ public class Movement : MonoBehaviour {
 
 #endif
 
+    // TODO: Move all declarations out of the update loop
     private void Update() {
         float x;
         float z;
