@@ -16,12 +16,10 @@ public class MouseLook : MonoBehaviour {
 
     private float xRotation = 0f;
 
-    // Start is called before the first frame update
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     private void Update() {
 #if ENABLE_INPUT_SYSTEM
         float mouseX = 0, mouseY = 0;

@@ -1,32 +1,84 @@
+#if ENABLE_INPUT_SYSTEM
+
+using UnityEngine.InputSystem;
+
+#endif
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
-    [SerializeField] private CharacterController controller;
-    [SerializeField] private float speed = 11f;
-    [SerializeField] private float gravity = -25f;
-    private LayerMask groundMask;
-    private Vector2 horizontalMovement;
-    private Vector3 verticalVelocity = Vector3.zero;
+    public CharacterController controller;
+
+    public float speed = 12f;
+    public float gravity = -10f;
+    public float jumpHeight = 2f;
+
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+
+    private Vector3 velocity;
     private bool isGrounded;
 
-    private void Update() {
-        isGrounded = Physics.CheckSphere(transform.position, 0.1f, groundMask);
-        if (isGrounded) {
-            verticalVelocity.y = 0;
-        }
+#if ENABLE_INPUT_SYSTEM
+    private InputAction movement;
+    private InputAction jump;
 
-        // I don't think this is right, it makes player go in circles
-        Vector3 horizontalVelocity = (transform.right * horizontalMovement.x + transform.forward * horizontalMovement.y) * speed;
-        controller.Move(horizontalVelocity * Time.deltaTime);
+    private void Start() {
+        movement = new InputAction("PlayerMovement", binding: "<Gamepad>/leftStick");
+        movement.AddCompositeBinding("Dpad")
+            .With("Up", "<Keyboard>/w")
+            .With("Up", "<Keyboard>/upArrow")
+            .With("Down", "<Keyboard>/s")
+            .With("Down", "<Keyboard>/downArrow")
+            .With("Left", "<Keyboard>/a")
+            .With("Left", "<Keyboard>/leftArrow")
+            .With("Right", "<Keyboard>/d")
+            .With("Right", "<Keyboard>/rightArrow");
 
-        verticalVelocity.y += gravity * Time.deltaTime;
-        controller.Move(verticalVelocity * Time.deltaTime);
+        jump = new InputAction("PlayerJump", binding: "<Gamepad>/a");
+        jump.AddBinding("<Keyboard>/space");
+
+        movement.Enable();
+        jump.Enable();
     }
 
-    public void RecieveInput(Vector2 input) {
-        horizontalMovement = input;
-        // Debug.Log(horizontalMovement);
+#endif
+
+    private void Update() {
+        float x;
+        float z;
+        bool jumpPressed = false;
+
+#if ENABLE_INPUT_SYSTEM
+        var delta = movement.ReadValue<Vector2>();
+        x = delta.x;
+        z = delta.y;
+        jumpPressed = Mathf.Approximately(jump.ReadValue<float>(), 1);
+#else
+        x = Input.GetAxis("Horizontal");
+        z = Input.GetAxis("Vertical");
+        jumpPressed = Input.GetButtonDown("Jump");
+#endif
+
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (isGrounded && velocity.y < 0) {
+            velocity.y = -2f;
+        }
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * speed * Time.deltaTime);
+
+        if (jumpPressed && isGrounded) {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
     }
 }

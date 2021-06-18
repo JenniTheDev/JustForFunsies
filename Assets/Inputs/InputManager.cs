@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour {
 
     private void Update() {
         // I don't want this in Update
-        movement.RecieveInput(horizontalDir);
+        //movement.RecieveInput(horizontalDir);
     }
 
     private void OnEnable() {
