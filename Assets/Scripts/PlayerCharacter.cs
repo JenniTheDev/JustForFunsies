@@ -10,6 +10,7 @@ public class PlayerCharacter : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         BadStuff badStuff = collision.gameObject.GetComponent<BadStuff>();
         if (badStuff != null) {
+            Debug.Log("There is bad stuff");
             playerHealth.AdjustHealth(badStuff.DamageAmount.ChangeAmount);
             onHealthChange.Raise(new HealthChangeData(badStuff.DamageAmount.ChangeAmount));
         }
