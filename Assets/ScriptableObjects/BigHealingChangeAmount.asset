@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf684d5c51e94847b8f3a0663b89a59, type: 3}
   m_Name: BigHealingChangeAmount
   m_EditorClassIdentifier: 
-  changeAmount: 0
+  changeAmount: 20
