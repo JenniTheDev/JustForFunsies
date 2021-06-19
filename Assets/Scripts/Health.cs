@@ -13,7 +13,7 @@ public class Health {
         this.healthPoints = startingHP;
     }
 
-    public float HealthValue {
+    public float HealthPoints {
         get { return this.healthPoints; }
     }
 

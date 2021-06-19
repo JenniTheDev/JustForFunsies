@@ -4,7 +4,7 @@ using UnityEngine;
 // This script needs work and isn't done
 public class UIText : MonoBehaviour {
     [SerializeField] private float floatNumber;
-    [SerializeField] private GameObject player;
+    [SerializeField] private PlayerCharacter playerCharacter;
 
     [SerializeField] private TMP_Text toText;
     [SerializeField] private string textTitle;
@@ -14,7 +14,7 @@ public class UIText : MonoBehaviour {
 
     // Should be on event health change
     public void UpdateHealthUI() {
-        floatNumber = player.GetComponent<Health>().HealthValue;
+        floatNumber = playerCharacter.GetCurrentHealth();
         toText.text = $"{textTitle} {floatNumber}";
     }
 }

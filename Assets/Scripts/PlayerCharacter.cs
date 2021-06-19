@@ -7,13 +7,16 @@ public class PlayerCharacter : MonoBehaviour {
     [SerializeField] private Health playerHealth;
     [SerializeField] private GameEventHealthChange onHealthChange;
 
-    private void OnCollisionEnter(Collision collision) {
-        BadStuff badStuff = collision.gameObject.GetComponent<BadStuff>();
-        Debug.Log($"collided with" + collision.gameObject.name);
+    private void OnTriggerEnter(Collider other) {
+        FloatChangeEventHandler badStuff = other.gameObject.GetComponent<FloatChangeEventHandler>();
+
         if (badStuff != null) {
-            Debug.Log("There is bad stuff");
-            playerHealth.AdjustHealth(badStuff.DamageAmount.ChangeAmount);
-            onHealthChange.Raise(new HealthChangeData(badStuff.DamageAmount.ChangeAmount));
+            playerHealth.AdjustHealth(badStuff.ChangeAmount.ChangeAmount);
+            onHealthChange.Raise(new HealthChangeData(badStuff.ChangeAmount.ChangeAmount));
         }
+    }
+
+    public float GetCurrentHealth() {
+        return this.playerHealth.HealthPoints;
     }
 }
