@@ -333,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325385000090531506, guid: 37d0fd650b7dfa94c8359b0c9c6e153d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 4325385000090531506, guid: 37d0fd650b7dfa94c8359b0c9c6e153d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -371,8 +371,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoodStuff
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4325385000090531507, guid: 37d0fd650b7dfa94c8359b0c9c6e153d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 37d0fd650b7dfa94c8359b0c9c6e153d, type: 3}
+--- !u!1 &687798857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4325385000090531509, guid: 37d0fd650b7dfa94c8359b0c9c6e153d, type: 3}
+  m_PrefabInstance: {fileID: 623265879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &687798858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687798857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d43df6449b0a04685ff65ced4fb74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: {fileID: 11400000, guid: ee7771b95dc2be44ba52b3f972b7e1c8, type: 2}
 --- !u!1 &690451238
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8571761837788477261, guid: 0f9719e1f2c0ed9448ec66dceb17dad9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.22
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 8571761837788477261, guid: 0f9719e1f2c0ed9448ec66dceb17dad9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -881,6 +900,7 @@ GameObject:
   - component: {fileID: 1983235431}
   - component: {fileID: 1983235436}
   - component: {fileID: 1983235435}
+  - component: {fileID: 1983235437}
   m_Layer: 0
   m_Name: Player_v2.0
   m_TagString: Untagged
@@ -1005,6 +1025,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1983235437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983235430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ece068a8425c74890b87c1ecd85c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth:
+    healthPoints: 0
+    startingHP: 100
+  onHealthChange: {fileID: 11400000, guid: 743970bda9a44a74ba5e65042ceb8cb2, type: 2}
 --- !u!1 &1999556480
 GameObject:
   m_ObjectHideFlags: 0
