@@ -324,6 +324,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 118063473900916598, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: playerHealth.startingHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 118063473900916598, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: playerHealth.healthPoints
       value: 100
       objectReference: {fileID: 0}
