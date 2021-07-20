@@ -19,5 +19,12 @@ public class Health {
 
     public void AdjustHealth(float healthChange) {
         healthPoints += healthChange;
+        CheckForDeath();
+    }
+
+    public void CheckForDeath() {
+        if (healthPoints < 0) {
+            
+        } 
     }
 }
