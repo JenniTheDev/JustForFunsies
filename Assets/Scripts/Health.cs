@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SOEvents.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +8,9 @@ using UnityEngine.Events;
 public class Health {
     [SerializeField] private float healthPoints;
     [SerializeField] private float startingHP;
+    [SerializeField] private GameEventDeath onPlayerDeath;
 
+    
     public Health(float startingHP) {
         this.startingHP = startingHP;
         this.healthPoints = startingHP;
@@ -24,7 +27,8 @@ public class Health {
 
     public void CheckForDeath() {
         if (healthPoints < 0) {
-            
+            onPlayerDeath.Raise(new DeathData());
+
         } 
     }
 }
