@@ -11,6 +11,7 @@ public class UIHealthText : MonoBehaviour {
 
     private void Start() {
         playerCharacter.GetCurrentHealth();
+        UpdateHealthUI();
     }
 
     // Should be on event health change

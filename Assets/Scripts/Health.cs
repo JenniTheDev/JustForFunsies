@@ -26,7 +26,7 @@ public class Health {
     }
 
     public void CheckForDeath() {
-        if (healthPoints < 0) {
+        if (healthPoints <= 0) {
             onPlayerDeath.Raise(new DeathData());
 
         } 
