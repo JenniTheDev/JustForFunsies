@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour {
 
     public void ChangeScene() {
+        Debug.Log("Buttons clicked");
         SceneManager.LoadScene("Zombies");
     }
 }

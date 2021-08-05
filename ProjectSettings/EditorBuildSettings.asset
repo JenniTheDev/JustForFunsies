@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 53aca1a516fda5645aeadf951022f7c7
+  - enabled: 1
     path: Assets/Scenes/Zombies.unity
     guid: 12bcb1dada768e54289fdfc489756196
   - enabled: 1
