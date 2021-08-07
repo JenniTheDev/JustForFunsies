@@ -14,7 +14,7 @@ Just For Funsies is my sandbox for trying out things that I want to learn in Uni
 
 Just For Funsies is a Unity project. It's a place for me to try out all the cool game dev things that I see in other games. It's also a place to practice good game architecture, game programming patterns and a lot of other stuff. Maybe it will end up being an actual game, maybe not. It will also keep my github slightly cleaner without a bunch of new projects for trying different things.
 
-Just FOr Funsies was created using Unity Version 2020.2.3f1
+Just For Funsies was created using Unity Version 2020.2.3f1
 
 <br><br>
 
@@ -34,6 +34,6 @@ Just FOr Funsies was created using Unity Version 2020.2.3f1
 - Pain sounds are 11 Male Human Pain/Death Sounds by Michel Baradari on [OpenGameArt.org](https://opengameart.org/content/11-male-human-paindeath-sounds)
 - Game Over font is Melted Monster by DMLetter31 on [DaFont.com](https://www.dafont.com/melted-monster.font)
 - Play Again and Exit font is Zombies Reborn by Typeline Studios on [DaFont.com](https://www.dafont.com/zombies-reborn.font)
-- 
+
 
 
