@@ -398,6 +398,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 118063473900916598, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: playerHealth.onDeath
+      value: 
+      objectReference: {fileID: 11400000, guid: 5df81ca071895ad49978258629b813db, type: 2}
+    - target: {fileID: 118063473900916598, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: playerHealth.startingHP
       value: 100
       objectReference: {fileID: 0}
@@ -408,7 +412,7 @@ PrefabInstance:
     - target: {fileID: 118063473900916598, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: playerHealth.onPlayerDeath
       value: 
-      objectReference: {fileID: 11400000, guid: 5df81ca071895ad49978258629b813db, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4135013735270702856, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2
@@ -1529,7 +1533,7 @@ PrefabInstance:
     - target: {fileID: 392380885902188699, guid: bc4b1678b4688d24aa76097fd3d7e3a0, type: 3}
       propertyPath: playerDeath
       value: 
-      objectReference: {fileID: 11400000, guid: 5df81ca071895ad49978258629b813db, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4982220002619031642, guid: bc4b1678b4688d24aa76097fd3d7e3a0, type: 3}
       propertyPath: m_SortingOrder
       value: 1

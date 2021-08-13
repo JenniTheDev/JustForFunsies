@@ -8,9 +8,8 @@ using UnityEngine.Events;
 public class Health {
     [SerializeField] private float healthPoints;
     [SerializeField] private float startingHP;
-    [SerializeField] private GameEventDeath onPlayerDeath;
+    [SerializeField] private GameEventDeath onDeath;
 
-    
     public Health(float startingHP) {
         this.startingHP = startingHP;
         this.healthPoints = startingHP;
@@ -27,8 +26,7 @@ public class Health {
 
     public void CheckForDeath() {
         if (healthPoints <= 0) {
-            onPlayerDeath.Raise(new DeathData());
-
-        } 
+            onDeath.Raise(new DeathData());
+        }
     }
 }
